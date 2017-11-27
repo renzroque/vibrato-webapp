@@ -14,6 +14,10 @@ Vagrant.configure(2) do |config|
     sudo apt-get -y install python-pip
     sudo pip install docker-compose
 
+    chmod u+x /vagrant/start-webapp.sh
+    cd /vagrant
+    sudo ./start-webapp.sh
+
     SHELL
   end
 end
