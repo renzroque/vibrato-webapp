@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  db:
+    container_name: vibrato-mysql
+    image: tutum/mysql
+    networks: 
+      - vibrato-network
+    environment:
+      ON_CREATE_DB: 'vibratoDB'
+      MYSQL_PASS: 'v1br@t0'
+  
+  app:
+    container_name: vibrato-webapp
+    build: .
+    image: renzroque/vibrato-webapp
+    ports:
+      - 80:80
+    networks:
+      - vibrato-network
+
+networks:
+  vibrato-network:
+    driver: bridge
