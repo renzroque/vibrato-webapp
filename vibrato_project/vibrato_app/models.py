@@ -6,4 +6,7 @@ class User(models.Model):
 	lastname = models.CharField(max_length=50)
 	email = models.EmailField(max_length=50)
 
-	
+
+
+
+
